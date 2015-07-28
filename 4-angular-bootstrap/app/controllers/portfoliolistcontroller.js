@@ -1,37 +1,12 @@
-portfolioApp.controller('PortfolioListController', function( $scope, $firebaseAuth, $firebaseArray, FIREBASE_URL ) {
+portfolioApp.controller('PortfolioListController', function( $scope ) {
+console.log('test');
+    $scope.portfolios = [
+    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
 
-    $scope.portfolios = [];
+    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
 
-    var ref = new Firebase(FIREBASE_URL);
-  var postRef = ref.child('portfolios');
-
-
-var pushImg = new Firebase(FIREBASE_URL  + '/images');
-pushImg.set({
-    'vessel1309': [
-    { filename: "350.png",
-    date: "2013/09/05",
-    description: "I love this boat, so much booty." },
-    { filename: "350.png",
-    date: "2013/09/06",
-    description: "We had a wonderful time on her."}],
-
-    'innocents1404': [
-    { filename: "350.png",
-    date: "2014/04/14",
-    description: "So cold and so much sacking!" },
-    { filename: "350.png",
-    date: "2014/04/15",
-    description: "The sails are so white here."}],
-
-    'firstmate1210': [
-    { filename: "350.png",
-    date: "2012/10/01",
-    description: "Getting mah pipe on!"},
-    { filename: "350.png",
-    date: "2012/10/02",
-    description: "FTW!!!11!one!1"}]
-});
+    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
+    ];
 
     $scope.new_album = {};
     $scope.add_portfolio_error = "";

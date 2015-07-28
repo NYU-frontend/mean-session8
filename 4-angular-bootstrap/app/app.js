@@ -1,5 +1,4 @@
-var portfolioApp = angular.module('portfolioApp', 
-	['ngRoute','firebase']).constant('FIREBASE_URL', 'https://pirate-portfolio.firebaseio.com/');
+var portfolioApp = angular.module('portfolioApp', ['ngRoute']);
 
 portfolioApp.config(function ($routeProvider) {
     $routeProvider
@@ -14,9 +13,6 @@ portfolioApp.config(function ($routeProvider) {
     .when("/",  { redirectTo: "/portfolios" })
     .otherwise({ redirectTo: "/404_page" });
 });
-
-
-
 
 
 
