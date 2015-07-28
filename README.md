@@ -3,6 +3,13 @@
 ##Homework
 TBD
 
+https://docs.angularjs.org/guide/animations
+
+Firebase - 5 minute tutorial
+
+Laptop - with node.js
+
+Midterm!!!!
 
 Follow up on text input effects: 
 http://tympanus.net/Development/TextInputEffects/index.html

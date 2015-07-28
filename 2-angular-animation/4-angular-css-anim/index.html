@@ -26,6 +26,9 @@
 			$scope.items.push($scope.item);
 			$scope.item = {};
 		}
+		$scope.bottomToTop = function(){
+			$scope.items.unshift($scope.items.pop());
+		}
 	});
 
 	</script>
@@ -41,21 +44,32 @@
 		float: right; 
 		cursor: pointer;
 	}
-	.fade { 
-		transition: all .2s linear;
-	}
 	.fade.ng-enter { 
-		opacity: 0; 
-	}
-	.fade.ng-enter.ng-enter-active {
-		opacity: 1;
+		animation: 2s appear; 
 	}
 	.fade.ng-leave { 
-		opacity: 1; 
+		animation: 1s disappear; 
 	}
-	.fade.ng-leave.ng-leave-active {
-		opacity: 0;
+
+	@keyframes appear {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
+	@keyframes disappear {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+
+
+
 
 	</style>
 
@@ -80,6 +94,12 @@
 			<div class="one-half column offset-by-three">
 				<input type="text" ng-model="item.name">
 				<button class="button-primary" ng-click="addItem()">Add Item</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="one-half column offset-by-three">
+				<button class="button-primary" ng-click="bottomToTop()">Move To Top</button>
 			</div>
 		</div>
 
